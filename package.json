@@ -1,0 +1,21 @@
+{
+  "name": "udemy_api_with_expressjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladikshevchuk/udemy_API_with_ExpressJS.git"
+  },
+  "author": "Vladyslav Shevchuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladikshevchuk/udemy_API_with_ExpressJS/issues"
+  },
+  "homepage": "https://github.com/vladikshevchuk/udemy_API_with_ExpressJS#readme"
+}
