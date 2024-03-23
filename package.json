@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/vladikshevchuk/udemy_API_with_ExpressJS/issues"
   },
-  "homepage": "https://github.com/vladikshevchuk/udemy_API_with_ExpressJS#readme"
+  "homepage": "https://github.com/vladikshevchuk/udemy_API_with_ExpressJS#readme",
+  "dependencies": {
+    "express": "^4.19.1"
+  }
 }
