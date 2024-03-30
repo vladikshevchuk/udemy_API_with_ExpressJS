@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js",
+    "start": "node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +20,8 @@
   "homepage": "https://github.com/vladikshevchuk/udemy_API_with_ExpressJS#readme",
   "dependencies": {
     "express": "^4.19.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21"
   }
 }
