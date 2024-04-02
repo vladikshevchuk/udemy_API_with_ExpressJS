@@ -21,6 +21,8 @@
   "homepage": "https://github.com/vladikshevchuk/udemy_API_with_ExpressJS#readme",
   "dependencies": {
     "express": "^4.19.1",
+    "inversify": "^6.0.2",
+    "reflect-metadata": "^0.2.2",
     "tslog": "^4.9.2"
   },
   "devDependencies": {
