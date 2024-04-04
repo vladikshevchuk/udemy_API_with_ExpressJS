@@ -1,5 +1,6 @@
 import express, { Express } from 'express';
 import { Server } from 'http';
+import { json } from 'body-parser';
 import { UserController } from './users/users.controller';
 import { ExeptionFiltres } from './errors/exeption.filter';
 import { ILogger } from './logger/logger.interface';
@@ -22,6 +23,10 @@ export class App {
 		this.port = 8000;
 	}
 
+	useMiddleware(): void {
+		this.app.use(json());
+	}
+
 	useRoutes(): void {
 		this.app.use('/users', this.userController.router);
 	}
@@ -31,6 +36,7 @@ export class App {
 	}
 
 	public async init(): Promise<void> {
+		this.useMiddleware();
 		this.useRoutes();
 		this.useExeptionFiltres();
 		this.server = this.app.listen(this.port);

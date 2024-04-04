@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node dist/main.js",
     "dev": "nodemon",
+    "dev:inspect": "nodemon -e ts,json --exec node --inspect=localhost:9222 -r ts-node/register src/main.ts",
     "lint": "eslint ./src/**",
     "lint:fix": "eslint ./src/** --fix",
     "build": "tsc",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/vladikshevchuk/udemy_API_with_ExpressJS#readme",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "express": "^4.19.1",
     "inversify": "^6.0.2",
     "reflect-metadata": "^0.2.2",
