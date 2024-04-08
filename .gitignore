@@ -131,3 +131,7 @@ dist
 
 # clinic doctor
 .clinic
+
+# prisma
+prisma/dev.db
+prisma/dev.db-journal
