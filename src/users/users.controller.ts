@@ -34,6 +34,12 @@ export class UserController extends BaseController implements IUserCuntroller {
 				func: this.login,
 				middlewares: [new ValidateMiddleware(UserLoginDto)],
 			},
+			{
+				path: '/info',
+				method: 'get',
+				func: this.info,
+				middlewares: [],
+			},
 		]);
 	}
 
@@ -47,6 +53,7 @@ export class UserController extends BaseController implements IUserCuntroller {
 			return next(new HTTPError(401, 'Authorisation Error', 'login'));
 		}
 		const jwt = await this.singJWT(req.body.email, this.configService.get('SECRET'));
+		this.loggerService.log('jwt ', jwt);
 		this.ok(res, { jwt });
 	}
 
@@ -60,6 +67,10 @@ export class UserController extends BaseController implements IUserCuntroller {
 			return next(new HTTPError(422, 'This user already exists'));
 		}
 		this.ok(res, { email: result.email, id: result.id });
+	}
+
+	async info({ user }: Request, res: Response, next: NextFunction): Promise<void> {
+		this.ok(res, { email: user });
 	}
 
 	private singJWT(email: string, secret: string): Promise<string> {
