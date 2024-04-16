@@ -9,12 +9,8 @@ export class AuthMiddleware implements IMiddleware {
 		if (req.headers.authorization) {
 			verify(req.headers.authorization, this.secret, (err, payload) => {
 				if (err) {
-					console.log('err ', err);
-
 					next();
 				} else if (payload) {
-					console.log('payload ', payload);
-
 					const decodedToken = payload as { email: string }; // <--- Cast here for Typescript
 					const { email } = decodedToken;
 
